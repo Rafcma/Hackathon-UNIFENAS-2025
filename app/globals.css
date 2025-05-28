@@ -1,0 +1,251 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 51, 51, 51;
+  --background-rgb: 248, 249, 250;
+  --primary-color: 91, 33, 182;
+  --secondary-color: 243, 232, 255;
+  --accent-color: 124, 58, 237;
+  --border-radius: 0.5rem;
+  --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+h1,
+h2,
+h3,
+.font-cinzel {
+  font-family: var(--font-cinzel);
+}
+
+.card {
+  @apply bg-white rounded-lg shadow-md overflow-hidden;
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.card-header {
+  @apply p-5 border-b border-gray-100;
+}
+
+.card-body {
+  @apply p-5;
+}
+
+.card-footer {
+  @apply p-5 border-t border-gray-100;
+}
+
+.btn {
+  @apply inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium transition-colors duration-200 ease-in-out;
+  border-radius: calc(var(--border-radius) - 0.125rem);
+}
+
+.btn-primary {
+  @apply text-white bg-purple-800 hover:bg-purple-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-700;
+}
+
+.btn-secondary {
+  @apply text-purple-800 bg-purple-100 hover:bg-purple-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500;
+}
+
+.btn-outline {
+  @apply text-purple-800 bg-transparent border border-purple-800 hover:bg-purple-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500;
+}
+
+.btn-sm {
+  @apply px-3 py-1.5 text-xs;
+}
+
+.btn-disabled {
+  @apply opacity-50 cursor-not-allowed;
+}
+
+.input {
+  @apply block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-purple-500 focus:border-purple-500 sm:text-sm;
+  border-radius: calc(var(--border-radius) - 0.125rem);
+}
+
+.select {
+  @apply block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-purple-500 focus:border-purple-500 sm:text-sm appearance-none;
+  border-radius: calc(var(--border-radius) - 0.125rem);
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 0.5rem center;
+  background-repeat: no-repeat;
+  background-size: 1.5em 1.5em;
+  padding-right: 2.5rem;
+}
+
+/* Novos estilos minimalistas */
+.select-moderno {
+  @apply block w-full px-4 py-2.5 text-base text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-gray-200 rounded-lg appearance-none;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.select-moderno:focus {
+  @apply border-purple-500 outline-none ring-1 ring-purple-500;
+}
+
+.btn-moderno {
+  @apply flex items-center justify-center px-4 py-2.5 bg-purple-700 text-white font-medium text-sm rounded-lg shadow-sm hover:bg-purple-800 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transition-all duration-200;
+}
+
+.btn-outline-moderno {
+  @apply flex items-center justify-center px-4 py-2.5 bg-white text-purple-700 font-medium text-sm rounded-lg border border-purple-700 hover:bg-purple-50 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transition-all duration-200;
+}
+
+.card-moderno {
+  @apply bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden;
+  transition: all 0.2s ease;
+}
+
+.card-moderno:hover {
+  @apply shadow-md border-gray-200;
+  transform: translateY(-2px);
+}
+
+.section-title {
+  @apply text-2xl font-bold text-gray-800 mb-6 relative pb-3;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  @apply bg-purple-600;
+}
+
+.feature-card {
+  @apply p-6 bg-white rounded-xl shadow-sm border border-gray-100 transition-all duration-200;
+}
+
+.feature-card:hover {
+  @apply shadow-md border-gray-200;
+  transform: translateY(-3px);
+}
+
+.feature-icon {
+  @apply w-12 h-12 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center mb-4;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in {
+  animation: slideInUp 0.3s ease-out;
+}
+
+.clip-triangle {
+  clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+}
+
+.logo-hover-effect {
+  transition: all 0.3s ease;
+}
+
+.logo-hover-effect:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+/* Estilos para a página Sobre */
+.prose {
+  @apply text-gray-700 leading-relaxed;
+}
+
+.prose h2 {
+  @apply text-xl font-semibold text-gray-800 mt-8 mb-4 font-cinzel;
+}
+
+.prose h3 {
+  @apply text-lg font-medium text-gray-800 mt-6 mb-3 font-cinzel;
+}
+
+.prose p {
+  @apply mb-4;
+}
+
+.prose ul {
+  @apply list-disc pl-6 mb-4;
+}
+
+.prose li {
+  @apply mb-2;
+}
+
+.info-box {
+  @apply p-6 rounded-xl bg-gray-50 border border-gray-100 mb-6;
+}
+
+.info-box-purple {
+  @apply p-6 rounded-xl bg-purple-50 border border-purple-100 mb-6;
+}
+
+.tag {
+  @apply inline-block px-3 py-1 rounded-full text-xs font-medium mr-2 mb-2;
+}
+
+.tag-purple {
+  @apply bg-purple-100 text-purple-800;
+}
+
+.tag-blue {
+  @apply bg-blue-100 text-blue-800;
+}
+
+.tag-green {
+  @apply bg-green-100 text-green-800;
+}
+
+.timeline {
+  @apply relative pl-8 pb-6 border-l border-gray-200;
+}
+
+.timeline-dot {
+  @apply absolute -left-2.5 w-5 h-5 rounded-full bg-purple-600 flex items-center justify-center;
+}
+
+.timeline-dot::before {
+  content: "";
+  @apply absolute w-3 h-3 rounded-full bg-white;
+}
+
+.timeline-content {
+  @apply ml-4;
+}
