@@ -67,6 +67,10 @@ export default function DetalhesAluno({ params }: { params: { id: string } }) {
     )
   }
 
+    <!-- Elfsight AI Chatbot | Untitled AI Chatbot -->
+  <script src="https://static.elfsight.com/platform/platform.js" async></script>
+  <div class="elfsight-app-2272833f-1f0e-4ddd-b61c-385bf55744cb" data-elfsight-app-lazy></div>
+    
   if (erro || !aluno) {
     return (
       <div className="min-h-screen bg-gray-50 flex flex-col">
